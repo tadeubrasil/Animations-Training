@@ -1,0 +1,25 @@
+{
+  "name": "floema",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack --progress --config webpack.config.build.js",
+    "development": "webpack serve --progress --config webpack.config.development.js",
+    "start": "npm rum development"
+  },
+  "author": "Tadeu Brasil",
+  "devDependencies": {
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "postcss-loader": "^7.0.2",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
+  }
+}
