@@ -2,8 +2,10 @@
   "name": "floema",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --progress --config webpack.config.build.js",
-    "development": "webpack serve --progress --config webpack.config.development.js",
+    "backend:build": "node app.js",
+    "backend:development": "nodemon app.js",
+    "frontend:build": "webpack --progress --config webpack.config.build.js",
+    "frontend:development": "webpack serve --progress --config webpack.config.development.js",
     "start": "npm rum development"
   },
   "author": "Tadeu Brasil",
@@ -14,13 +16,13 @@
     "css-loader": "^6.7.3",
     "eslint": "^8.31.0",
     "eslint-config-standard": "^17.0.0",
-    "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.27.4",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-standard": "^5.0.0",
     "file-loader": "^6.2.0",
     "glslify-loader": "^2.0.0",
     "image-minimizer-webpack-plugin": "^3.8.1",
+    "imagemin": "^8.0.1",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-mozjpeg": "^10.0.0",
@@ -37,6 +39,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "imagemin": "^8.0.1"
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
   }
 }
