@@ -16,7 +16,7 @@ const initApi = (req) => {
     accessToken: process.env.PRISMIC_ACCESS_TOKEN,
     req,
     fetch
-})
+  })
 }
 
 const HandleLinkResolver = (doc) => {
@@ -28,6 +28,11 @@ app.use((req, res, next) => {
     endpoint: process.env.PRISMIC_ENDPOINT,
     linkResolver: HandleLinkResolver
   }
+
+  res.locals.Numbers = index =>{
+    return index === 0 ? 'One' : index === 1 ? 'Two' : index === 2 ? 'Three' : index === 3 ? 'Four' : ''
+  }
+
   res.locals.PrismicH = PrismicH
 
   next()
@@ -37,7 +42,8 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
 const handleRequest = async (api) => {
-  const [about] = await Promise.all([
+  const [home, about, { results: collections }] = await Promise.all([
+    api.getSingle('home'),
     api.getSingle('about'),
     api.query(Prismic.Predicates.at('document.type', 'collection'), {
       fetchLinks: 'product.image'
@@ -45,6 +51,7 @@ const handleRequest = async (api) => {
   ])
 
   const assets = []
+
   about.data.gallery.forEach((item) => {
     assets.push(item.image.url)
   })
@@ -57,7 +64,15 @@ const handleRequest = async (api) => {
     }
   })
 
+  collections.forEach((collection) => {
+    collection.data.products.forEach((item) => {
+      assets.push(item.products_product.data.image.url)
+    })
+  })
+
   return {
+    home,
+    collections,
     about
   }
 }
@@ -80,17 +95,27 @@ app.get('/about', async (req, res) => {
   })
 })
 
-app.get('/collection', async (req, res) => {
+app.get('/collections', async (req, res) => {
   const api = await initApi(req)
   const defaults = await handleRequest(api)
 
-  res.render('pages/collection', {
+  res.render('pages/collections', {
     ...defaults
   })
 })
 
-app.get('/detail/:uid', (req, res) => {
-  res.render('pages/detail')
+app.get('/detail/:uid', async (req, res) => {
+  const api = await initApi(req)
+  const defaults = await handleRequest(api)
+
+  const product = await api.getByUID('product', req.params.uid, {
+    fetchLinks: 'collection.title'
+  })
+
+  res.render('pages/detail', {
+    ...defaults,
+    product
+  })
 })
 
 app.listen(port, () => {
