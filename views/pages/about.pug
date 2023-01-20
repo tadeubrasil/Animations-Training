@@ -4,4 +4,43 @@ block variables
   - var template = 'about'
 
 block content
-  h1.collections__title About
+  .about 
+    .about__wrapper
+      section.about__gallery
+        .about__gallery_wrapper
+          each media in about.data.gallery
+            figure.about__gallery__media 
+              img.about__gallery_media__image(alt=media.image.alt src=media.image.url)
+
+          each section in about.data.body
+            if section.slice_type == 'title'
+              h2.about__title=section.primary.text
+
+            if section.slice_type == 'content'
+              section.about__content
+                .about__content_wrapper 
+                  p.about__content__label=section.primary.label 
+
+                  .about__content__description=PrismicH.asText(section.primary.description)
+
+                  figure.about__content__media 
+                    img.about__content__media_imagem(alt=section.primary.image.alt src=section.primary.image.url)
+            
+            if section.slice_type == 'highlight'
+              section.about__highlight
+                .about__highlight_wrapper 
+                  if section.primary.label
+                    p.about__highlight__label=section.primary.label
+
+                  h3.about__highlight__title=section.primary.title
+
+                  each media in section.items 
+                    figure.about__highlight__media 
+                    img.about__highlight__media_imagem(alt=media.image.alt src=media.image.url)
+            
+            if section.slice_type == 'gallery'
+              section.about__gallery
+                .about__gallery_wrapper
+                  each media in section.items
+                    figure.about__gallery__media 
+                      img.about__gallery_media__image(alt=media.image.alt src=media.image.url)
