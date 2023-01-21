@@ -8,9 +8,9 @@ html(lang="en")
 
     base(href="/")
 
-    title Floema 
+    title=meta.data.title 
     
-    meta(name="description" content="Floema beautiful jewlery")
+    meta(name="description" content=meta.data.description)
 
     link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png")
     link(rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png")
@@ -20,15 +20,15 @@ html(lang="en")
     meta(name="msapplication-TileColor" content="#f4dbcc")
     meta(name="theme-color" content="#f4dbcc")
 
-    //- meta(property="og:title" content="website")
-    //- meta(property="og:type" content=meta.data.title)
-    //- meta(property="og:description" content=meta.data.description)
-    //- meta(property="og:image" content=meta.data.image ? meta.data.imagem.url : '' )
+    meta(property="og:title" content="website")
+    meta(property="og:type" content=meta.data.title)
+    meta(property="og:description" content=meta.data.description)
+    meta(property="og:image" content=meta.data.image.url)
 
-    //- meta(property="twitter:card" content="summary_large_image")
-    //- meta(property="twitter:title" content=meta.data.title)
-    //- meta(property="twitter:description" content=meta.data.description)
-    //-meta(property="twitter:image" content=meta.data.image ? meta.data.imagem.url : '' )
+    meta(property="twitter:card" content="summary_large_image")
+    meta(property="twitter:title" content=meta.data.title)
+    meta(property="twitter:description" content=meta.data.description)
+    meta(property="twitter:image" content=meta.data.imagem)
    
     link(rel="stylesheet", href="main.css")
 
