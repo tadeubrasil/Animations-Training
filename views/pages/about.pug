@@ -20,7 +20,7 @@ block content
           section.about__content(class=`${section.primary.type === 'Left' ? 'about__content--left' : 'about__content--right'}`)
             .about__content__wrapper 
               .about__content__box
-                p.about__content__label=section.primary.label 
+                p.about__content__label!=section.primary.label 
                 
                 .about__content__description!=PrismicH.asHTML(section.primary.description)
 

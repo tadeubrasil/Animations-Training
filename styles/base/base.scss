@@ -8,6 +8,10 @@
 html{
   font-size: calc(100vw / 1920 * 10);
   line-height: 1;
+
+  @include media('<phone'){
+    font-size: calc(100vw / 750 * 10);
+  }
 }
 body {
   @extend %description-16;
@@ -21,7 +25,14 @@ a{
   text-decoration: none;
 }
 
-img{
+button{
+  background:none;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+}
 
+img{
   vertical-align: middle;
 }

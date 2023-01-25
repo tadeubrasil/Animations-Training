@@ -5,6 +5,7 @@
   background: $color-contessa;
   color: $color-quarter-spanish-white;
   text-align: center;
+  overflow: hidden;
 
   &:before,
   &::after{
@@ -44,27 +45,43 @@
 }
 
 .home__gallery  {
+  @extend %cover;
 
+  visibility: hidden;
 }
+
 .home__gallery__media  {
-
+  position: absolute;
 }
+
 .home__gallery__media__image {
 
 }
+
 .home__link {
   @extend %description-14;
 
-  align-items: center;
-  bottom: 5rem;
+  letter-spacing: 0.05;
+  width: 28.84em;
   height: 6rem;
+  align-items: center;
   display: flex;
   justify-content: center;
-  left: 50%;
-  letter-spacing: 0.05rem;
   position: absolute;
   text-transform: uppercase;
-  transform: translateY(-50%);
-  width: 28.8rem;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
+
+  @include media('<phone'){
+    bottom: 7.5rem;
+    height: 13.7rem;
+    width: 55rem;
+  }
+
+}
+
+.home__link__icon{
+  @extend %cover;
 }
