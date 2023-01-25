@@ -3,9 +3,15 @@
   font-size: 2rem;
 }
 
+%title-30 {
+  font-family: $font-george-x;
+  font-size: 3rem;
+}
+
 %title-53 {
   font-family: $font-george-x;
   font-size: 5.3rem;
+  line-height: 1;
 }
 
 %title-60 {
@@ -16,11 +22,13 @@
 %title-100 {
   font-family: $font-george-x;
   font-size: 10rem;
+  line-height: 1;
 }
 
 %title-120 {
   font-family: $font-george-x;
   font-size: 12rem;
+  line-height: 0.82;
 }
 
 %title-200 {

@@ -1,3 +1,5 @@
+@import './base/reset';
+
 @import './utils/variables';
 @import './utils/functions';
 @import './utils/mixins';
@@ -6,10 +8,14 @@
 
 @import './shared/descriptions';
 @import './shared/titles';
+@import './shared/vertical-titles';
 
 @import './base/fonts';
-@import './base/reset';
 @import './base/base';
+
+@import './components/preloader';
+
+@import './layout/navigation';
 
 @import './pages/about/about';
 @import './pages/about/content';

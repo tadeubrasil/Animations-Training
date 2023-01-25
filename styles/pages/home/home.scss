@@ -1,18 +1,48 @@
 .home {
+  @extend %cover;
+  @extend %center;
 
+  background: $color-contessa;
+  color: $color-quarter-spanish-white;
+  text-align: center;
+
+  &:before,
+  &::after{
+    content: '';
+    height: 24rem;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:before{
+    background: linear-gradient(to bottom, $color-contessa 0%, rgba($color-contessa, 0) 100%);
+    top: 0;
+  }
+
+  &:after{
+    background: linear-gradient(to top, $color-contessa 0%, rgba($color-contessa, 0) 100%);
+    bottom: 0;
+  }
 }
+
 .home__wrapper {
 
 }
+
 .home__titles {
-
+  @extend %vertical-titles;
 }
+
 .home__titles__label {
-
+  @extend %vertical-titles__label;
 }
+
 .home__titles__title {
-
+  @extend %vertical-titles__title;
 }
+
 .home__gallery  {
 
 }
@@ -23,5 +53,18 @@
 
 }
 .home__link {
+  @extend %description-14;
 
+  align-items: center;
+  bottom: 5rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  letter-spacing: 0.05rem;
+  position: absolute;
+  text-transform: uppercase;
+  transform: translateY(-50%);
+  width: 28.8rem;
+  z-index: 2;
 }

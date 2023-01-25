@@ -6,7 +6,7 @@ block variables
 block content
   .detail
     .detail__wrapper 
-      figure.detail_wrapper
+      figure.detail__media
         img.detail__media__image(alt=product.data.image.alt src=product.data.image.url)
 
       .detail__information 
@@ -21,7 +21,7 @@ block content
                 svg.detail_information__highlight__icon
                   use(xlink:href=`sprite-${highlight.highlights_icon.toLowerCase()}`)
 
-                span.detail__information_highlight__text=highlight.highlights_text
+                span.detail__information_highlight__text!=highlight.highlights_text.replace(/\n/g, '<br>')
 
           .detail__information__list 
             each item in product.data.informations

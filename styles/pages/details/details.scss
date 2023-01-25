@@ -1,17 +1,100 @@
-.detail {}
-.detail__wrapper  {}
-.detail_wrapper {}
-.detail__media__image {}
-.detail__information  {}
-.detail__information__collection {}
-.detail__information__title {}
-.detail__information__content  {}
-.detail__information__highlights  {}
-.detail__information__highlight {}
-.detail_information__highlight__icon {}
-.detail__information_highlight__text {}
-.detail__information__list  {}
-.detail__information__item {}
-.detail__information__item__title {}
-.detail__information__item__description {}
-.detail__information__link{}
+.detail {
+  @extend %cover;
+  @extend %center;
+
+  background: $color-quicksand;
+  color:$color-white;
+}
+
+.detail__wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.detail_media {
+  height: 63.1rem;
+  position: relative;
+  width: 44.7rem;
+}
+
+.detail__media__image {
+  @extend %cover;
+
+  object-fit: cover;
+}
+
+.detail__information {
+  padding-left: 8.2rem;
+}
+
+.detail__information__collection {
+  @extend %description-12;
+
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+}
+
+.detail__information__title {
+  @extend %title-120;
+
+  max-width: 60rem;
+}
+
+.detail__information__content {
+  padding-left: 18rem;
+}
+
+.detail__information__highlights  {
+  margin-top: 5rem;
+}
+.detail__information__highlight {
+  align-items: center;
+  display: flex;
+  
+  &:not(:first-child) {
+    margin-top: 4rem;
+  }
+}
+.detail_information__highlight__icon {
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  height: 4rem;
+  margin-right: 3.75rem;
+  width: 4rem;
+}
+
+.detail__information_highlight__text {
+  @extend %description-16;
+}
+
+.detail__information__list {
+  margin-top: 4rem;
+}
+
+.detail__information__item {
+  display: flex;
+
+  &:not(:first-child) {
+    margin-top: 4rem;
+  }
+}
+
+.detail__information__item__title {
+  @extend %description-12;
+
+  padding-right: 2.5rem;
+  width:10rem;
+}
+
+.detail__information__item__description {
+  @extend %description-16;
+
+  max-width: 44rem;
+}
+
+.detail__information__link{
+  @extend %title-30;
+
+  display: inline-block;
+  margin-top:3px;
+}
