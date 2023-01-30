@@ -1,6 +1,6 @@
 import each from 'lodash/each'
 
-import Preloader from './components/Preloader'
+import Preloader from 'components/Preloader'
 
 import About from 'pages/About'
 import Collections from 'pages/Collections'
@@ -9,11 +9,17 @@ import Home from 'pages/Home'
 
 class App {
   constructor () {
-    this.createPreloader()
     this.createContent()
+
+    this.createPreloader()
     this.createPages()
 
+    this.addEventListeners()
     this.addLinkListeners()
+
+    this.onResize()
+
+    this.update()
   }
 
   createPreloader () {
@@ -38,7 +44,12 @@ class App {
     this.page.create()
   }
 
+  /***
+   * Events
+   */
   onPreloaded () {
+    this.onResize()
+
     this.preloader.destroy()
 
     this.page.show()
@@ -57,16 +68,46 @@ class App {
       const divContent = div.querySelector('.content')
 
       this.template = divContent.getAttribute('data-template')
+
+      this.content.setAttribute('data-template', this.template)
       this.content.innerHTML = divContent.innerHTML
 
       this.page = this.pages[this.template]
+
       this.page.create()
+
+      this.page.onResize()
+
       this.page.show()
 
       this.addLinkListeners()
     } else {
       console.log(`response status: ${request.status}`)
     }
+  }
+
+  onResize () {
+    if (this.page && this.page.onResize) {
+      this.page.onResize()
+    }
+  }
+
+  /***
+   * Loop
+   */
+  update () {
+    if (this.page && this.page.update) {
+      this.page.update()
+    }
+    this.Frame = window.requestAnimationFrame(this.update.bind(this))
+  }
+
+  /***
+   * Listeners
+   */
+
+  addEventListeners () {
+    window.addEventListener('resize', this.onResize.bind(this))
   }
 
   addLinkListeners () {
