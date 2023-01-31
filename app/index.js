@@ -17,8 +17,6 @@ class App {
     this.addEventListeners()
     this.addLinkListeners()
 
-    this.onResize()
-
     this.update()
   }
 
@@ -48,9 +46,9 @@ class App {
    * Events
    */
   onPreloaded () {
-    this.onResize()
-
     this.preloader.destroy()
+
+    this.onResize()
 
     this.page.show()
   }

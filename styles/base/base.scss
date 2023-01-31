@@ -7,6 +7,7 @@
 
 html{
   @extend %cover;
+  
   font-size: calc(100vw / 1920 * 10);
   line-height: 1;
   overflow: hidden;
@@ -17,12 +18,14 @@ html{
     font-size: calc(100vw / 750 * 10);
   }
 }
+
 body {
   @extend %cover;
   @extend %description-16;
   
   font-family: $font-suisse-bp;
   position: fixed;
+
 }
 
 a{
