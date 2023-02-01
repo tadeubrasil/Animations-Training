@@ -7,7 +7,9 @@
 
 html{
   @extend %cover;
-  
+    
+  background:$color-contessa;
+  color: $color-quarter-spanish-white;
   font-size: calc(100vw / 1920 * 10);
   line-height: 1;
   overflow: hidden;
@@ -22,10 +24,8 @@ html{
 body {
   @extend %cover;
   @extend %description-16;
-  
   font-family: $font-suisse-bp;
   position: fixed;
-
 }
 
 a{
@@ -43,7 +43,13 @@ button{
 }
 
 img{
+  opacity: 0;
+  transition: opacity 0.4s ease;
   vertical-align: middle;
+
+  &.loaded{
+    opacity: 1;
+  }
 }
 
 .content {

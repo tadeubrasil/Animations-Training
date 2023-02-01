@@ -2,8 +2,8 @@
   @extend %center;
   @extend %page;
 
-  background: $color-quicksand;
-  color:$color-white;
+  //background: $color-quicksand;
+  //color:$color-white;
 
   @include media('<phone'){
     height: auto;
