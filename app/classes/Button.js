@@ -7,7 +7,7 @@ export default class Button extends Component {
 
     this.path = element.querySelector('path:last-child')
     this.pathLength = this.path.getTotalLength()
-    console.log(this.path.getTotalLength())
+    //    console.log(this.path.getTotalLength())
 
     this.timeline = GSAP.timeline({ paused: true })
 
@@ -21,12 +21,10 @@ export default class Button extends Component {
   }
 
   onMouseEnter () {
-    console.log('enter')
     this.timeline.play()
   }
 
   onMouseLeave () {
-    console.log('leave')
     this.timeline.reverse()
   }
 

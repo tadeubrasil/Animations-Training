@@ -50,6 +50,5 @@ export default class Navigation extends Component {
         duration: 0.75
       })
     }
-    console.log(template)
   }
 }
