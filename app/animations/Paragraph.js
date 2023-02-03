@@ -2,7 +2,7 @@ import GSAP from 'gsap'
 
 import each from 'lodash/each'
 
-import Animation from 'classes/Animations'
+import Animation from 'classes/Animation'
 
 import { calculate, split } from 'utils/text'
 

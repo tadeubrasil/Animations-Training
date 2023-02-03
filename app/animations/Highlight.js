@@ -1,17 +1,9 @@
-import GSAP from 'gsap'
-
-import each from 'lodash/each'
-
-import Animation from 'classes/Animations'
-
-import { calculate, split } from 'utils/text'
+import GSAP from 'gsap';
+import Animation from 'classes/Animation';
 
 export default class Highlight extends Animation {
-  constructor ({ element, elements }) {
-    super({
-      element,
-      elements
-    })
+  constructor({ element, elements }) {
+    super({ element, elements });
   }
 
   animateIn () {
@@ -30,9 +22,9 @@ export default class Highlight extends Animation {
     })
   }
 
-  animateOut () {
+  animateOut() {
     GSAP.set(this.element, {
-      autoAlpha: 0
-    })
+      autoAlpha: 0,
+    });
   }
 }

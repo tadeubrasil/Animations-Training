@@ -1,18 +1,18 @@
 /*!
- * CSSPlugin 3.11.4
+ * CSSPlugin 3.8.0
  * https://greensock.com
  *
- * Copyright 2008-2022, GreenSock. All rights reserved.
+ * Copyright 2008-2021, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
 
 /*!
- * GSAP 3.11.4
+ * GSAP 3.8.0
  * https://greensock.com
  *
- * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * @license Copyright 2008-2021, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -32,13 +32,15 @@
 
 /*! ../modules/logger/index.js */
 
-/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */
-
 /*! ../utils/log.js */
 
 /*! ./About */
 
 /*! ./CSSPlugin.js */
+
+/*! ./Collections */
+
+/*! ./Detail */
 
 /*! ./ExecutionEnvironment */
 
@@ -53,6 +55,8 @@
 /*! ./Media */
 
 /*! ./Transform.js */
+
+/*! ./Transition */
 
 /*! ./UserAgent_DEPRECATED */
 
@@ -266,7 +270,11 @@
 
 /*! ./createConsoleLogger */
 
+/*! ./decode */
+
 /*! ./emitter */
+
+/*! ./encode */
 
 /*! ./eq */
 
@@ -324,7 +332,11 @@
 
 /*! ./memoize */
 
+/*! ./modules/strip-ansi/index.js */
+
 /*! ./named-references */
+
+/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */
 
 /*! ./node_modules/webpack-dev-server/client/clients/WebSocketClient.js */
 
@@ -348,6 +360,8 @@
 
 /*! ./toString */
 
+/*! ./util */
+
 /*! ./utils/createSocketURL.js */
 
 /*! ./utils/log.js */
@@ -358,19 +372,19 @@
 
 /*! ./utils/sendMessage.js */
 
-/*! ./utils/stripAnsi.js */
-
 /*! animations/Highlight */
 
 /*! animations/Label */
 
 /*! animations/Paragraph */
 
-/*! animations/Titles */
+/*! animations/Title */
 
 /*! ansi-html-community */
 
-/*! classes/Animations */
+/*! ansi-regex */
+
+/*! classes/Animation */
 
 /*! classes/AsyncLoad */
 
@@ -382,7 +396,7 @@
 
 /*! classes/Detection */
 
-/*! classes/pages */
+/*! classes/Page */
 
 /*! components/Canvas */
 
@@ -395,6 +409,8 @@
 /*! gsap */
 
 /*! html-entities */
+
+/*! https://mths.be/punycode v1.3.2 by @mathias */
 
 /*! lodash/each */
 
@@ -414,13 +430,29 @@
 
 /*! prefix */
 
+/*! punycode */
+
+/*! querystring */
+
+/*! shaders/collections-fragment.glsl */
+
+/*! shaders/collections-vertex.glsl */
+
+/*! shaders/home-fragment.glsl */
+
+/*! shaders/home-vertex.glsl */
+
 /*! shaders/plane-fragment.glsl */
 
 /*! shaders/plane-vertex.glsl */
 
+/*! strip-ansi */
+
 /*! tapable/lib/SyncBailHook */
 
-/*! utils/colors */
+/*! url */
+
+/*! utils/color */
 
 /*! utils/text */
 
@@ -442,13 +474,13 @@
   !*** ./styles/index.scss ***!
   \***************************/
 
-/*!*****************************!*\
-  !*** ./app/utils/colors.js ***!
-  \*****************************/
+/*!****************************!*\
+  !*** ./app/utils/color.js ***!
+  \****************************/
 
-/*!******************************!*\
-  !*** ./app/classes/pages.js ***!
-  \******************************/
+/*!*****************************!*\
+  !*** ./app/classes/Page.js ***!
+  \*****************************/
 
 /*!*******************************!*\
   !*** ./app/classes/Button.js ***!
@@ -463,11 +495,19 @@
   \*********************************/
 
 /*!*********************************!*\
+  !*** ./app/animations/Title.js ***!
+  \*********************************/
+
+/*!*********************************!*\
   !*** ./app/pages/Home/index.js ***!
   \*********************************/
 
+/*!*********************************!*\
+  !*** ./node_modules/url/url.js ***!
+  \*********************************/
+
 /*!**********************************!*\
-  !*** ./app/animations/Titles.js ***!
+  !*** ./app/classes/Animation.js ***!
   \**********************************/
 
 /*!**********************************!*\
@@ -486,9 +526,9 @@
   !*** ./app/pages/About/index.js ***!
   \**********************************/
 
-/*!***********************************!*\
-  !*** ./app/classes/Animations.js ***!
-  \***********************************/
+/*!**********************************!*\
+  !*** ./node_modules/url/util.js ***!
+  \**********************************/
 
 /*!***********************************!*\
   !*** ./app/pages/Detail/index.js ***!
@@ -543,6 +583,10 @@
   \**************************************/
 
 /*!**************************************!*\
+  !*** ./app/shaders/home-vertex.glsl ***!
+  \**************************************/
+
+/*!**************************************!*\
   !*** ./node_modules/lodash/_Hash.js ***!
   \**************************************/
 
@@ -584,6 +628,10 @@
 
 /*!****************************************!*\
   !*** ./app/pages/Collections/index.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./app/shaders/home-fragment.glsl ***!
   \****************************************/
 
 /*!****************************************!*\
@@ -830,6 +878,10 @@
   !*** ./node_modules/ogl/src/math/Vec3.js ***!
   \*******************************************/
 
+/*!*******************************************!*\
+  !*** ./node_modules/querystring/index.js ***!
+  \*******************************************/
+
 /*!********************************************!*\
       !*** ./client-src/modules/logger/index.js ***!
       \********************************************/
@@ -902,12 +954,28 @@
   !*** ./node_modules/ogl/src/math/Euler.js ***!
   \********************************************/
 
+/*!********************************************!*\
+  !*** ./node_modules/querystring/decode.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/querystring/encode.js ***!
+  \********************************************/
+
 /*!*********************************************!*\
   !*** ./app/components/Canvas/Home/Media.js ***!
   \*********************************************/
 
 /*!*********************************************!*\
   !*** ./app/components/Canvas/Home/index.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./app/components/Canvas/Transition.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./app/shaders/collections-vertex.glsl ***!
   \*********************************************/
 
 /*!*********************************************!*\
@@ -1047,6 +1115,14 @@
   \**********************************************/
 
 /*!***********************************************!*\
+  !*** ./app/components/Canvas/Detail/index.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./app/shaders/collections-fragment.glsl ***!
+  \***********************************************/
+
+/*!***********************************************!*\
   !*** ./node_modules/lodash/_arrayLikeKeys.js ***!
   \***********************************************/
 
@@ -1073,6 +1149,10 @@
 /*!***********************************************!*\
   !*** ./node_modules/ogl/src/core/Renderer.js ***!
   \***********************************************/
+
+/*!************************************************!*\
+      !*** ./client-src/modules/strip-ansi/index.js ***!
+      \************************************************/
 
 /*!************************************************!*\
   !*** ./app/components/Canvas/About/Gallery.js ***!
@@ -1135,16 +1215,16 @@
   \***************************************************/
 
 /*!****************************************************!*\
-      !*** ./node_modules/webpack/lib/logging/Logger.js ***!
-      \****************************************************/
+  !*** ./app/components/Canvas/Collections/Media.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./app/components/Canvas/Collections/index.js ***!
+  \****************************************************/
 
 /*!****************************************************!*\
   !*** ./node_modules/lodash/_isStrictComparable.js ***!
   \****************************************************/
-
-/*!*****************************************************!*\
-      !*** ./node_modules/webpack/lib/logging/runtime.js ***!
-      \*****************************************************/
 
 /*!*****************************************************!*\
   !*** ./node_modules/lodash/_baseMatchesProperty.js ***!
@@ -1153,10 +1233,6 @@
 /*!******************************************************!*\
   !*** ./node_modules/webpack/hot/log-apply-result.js ***!
   \******************************************************/
-
-/*!*******************************************************!*\
-      !*** ./client-src/modules/logger/SyncBailHookFake.js ***!
-      \*******************************************************/
 
 /*!*********************************************************!*\
   !*** ./node_modules/lodash/_matchesStrictComparable.js ***!
@@ -1206,6 +1282,10 @@
   !*** ./node_modules/normalize-wheel/src/normalizeWheel.js ***!
   \************************************************************/
 
+/*!************************************************************!*\
+  !*** ./node_modules/url/node_modules/punycode/punycode.js ***!
+  \************************************************************/
+
 /*!*************************************************************!*\
   !*** ./node_modules/webpack-dev-server/client/utils/log.js ***!
   \*************************************************************/
@@ -1217,10 +1297,6 @@
 /*!***************************************************************!*\
   !*** ./node_modules/html-entities/lib/numeric-unicode-map.js ***!
   \***************************************************************/
-
-/*!*****************************************************************!*\
-      !*** ./node_modules/webpack/lib/logging/createConsoleLogger.js ***!
-      \*****************************************************************/
 
 /*!******************************************************************!*\
   !*** ./node_modules/normalize-wheel/src/ExecutionEnvironment.js ***!
@@ -1236,10 +1312,6 @@
 
 /*!*******************************************************************!*\
   !*** ./node_modules/webpack-dev-server/client/utils/reloadApp.js ***!
-  \*******************************************************************/
-
-/*!*******************************************************************!*\
-  !*** ./node_modules/webpack-dev-server/client/utils/stripAnsi.js ***!
   \*******************************************************************/
 
 /*!*********************************************************************!*\
@@ -1262,6 +1334,10 @@
   !*** ./node_modules/webpack-dev-server/client/clients/WebSocketClient.js ***!
   \***************************************************************************/
 
+/*!****************************************************************************!*\
+  !*** ./node_modules/webpack-dev-server/client/modules/strip-ansi/index.js ***!
+  \****************************************************************************/
+
 /*!*******************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js ***!
   \*******************************************************************************/
@@ -1270,9 +1346,9 @@
   !*** ./node_modules/webpack-dev-server/client/utils/getCurrentScriptSource.js ***!
   \********************************************************************************/
 
-/*!***********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=0.0.0.0&port=8081&pathname=%2Fws&logging=info&overlay=true&reconnect=10&hot=true&live-reload=true ***!
-  \***********************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************!*\
+  !*** ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=0.0.0.0&port=8080&pathname=%2Fws&logging=info ***!
+  \*******************************************************************************************************************************/
 
 /**
  * Checks if an event is supported in the current execution environment.

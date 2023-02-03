@@ -1,16 +1,14 @@
 .detail {
-  @extend %center;
   @extend %page;
+  @extend %center;
+  
+  // background-color: $color-quicksand;
+  // color: $color-white;
 
-  //background: $color-quicksand;
-  //color:$color-white;
-
-  @include media('<phone'){
+  @include media('<phone') {
     height: auto;
   }
 }
-
-
 .detail__wrapper {
   display: flex;
   align-items: center;
@@ -18,7 +16,7 @@
   @include media('<phone') {
     display: block;
     margin: auto;
-    padding: 16rem 0 32rem;
+    padding: 16rem 0;
     width: 66.1rem;
   }
 }
@@ -151,7 +149,6 @@
   z-index: 2;
 
   @include media('<phone') {
-    font-size: 3rem;
     width: 26.8rem;
     height: 26.8rem;
     bottom: 0;

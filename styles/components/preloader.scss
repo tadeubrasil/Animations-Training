@@ -1,15 +1,14 @@
-.preloader{
+.preloader {
   @extend %cover;
   @extend %center;
-
   background: $color-contessa;
-  color: $color-quarter-spanish-white;
+  color: $color-white;
   text-align: center;
+
   z-index: z('preloader');
 }
-.preloader__text{
-  @extend %title-53;
-
+.preloader__text {
+  font-size: 0;
   max-width: 66rem;
 
   span {
@@ -17,22 +16,20 @@
     overflow: hidden;
   }
 
-  span span{
+  span span {
     @extend %title-53;
   }
 }
-
-.preloader__number{
+.preloader__number {
   @extend %description-14;
-
-  bottom: 7.3rem;  
-  left: 50%;
-  overflow: hidden;
   position: absolute;
-  transform: translate(-50%);
+  overflow: hidden;
+  bottom: 5.1rem;
+  left: 50%;
+  transform: translateX(-50%);
 
   @include media('<phone') {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
   }
 }
 

@@ -1,28 +1,47 @@
-import Button from 'classes/Button'
-import Page from 'classes/pages'
+import GSAP from 'gsap';
+import Button from 'classes/Button';
+import Page from 'classes/Page';
 
 export default class Detail extends Page {
-  constructor () {
+  constructor() {
     super({
       id: 'detail',
-
       element: '.detail',
       elements: {
-        button: '.detail'
-      }
-    })
+        button: '.detail__button',
+      },
+    });
   }
 
-  create () {
-    super.create()
+  create() {
+    super.create();
 
     this.link = new Button({
-      element: this.elements.button
-    })
+      element: this.elements.button,
+    });
   }
 
-  destroy () {
-    super.destroy()
-    this.link.removeEventListeners()
+  show() {
+    const timeline = GSAP.timeline({
+      delay: 2,
+    });
+
+    timeline.fromTo(
+      this.element,
+      {
+        autoAlpha: 0,
+      },
+      {
+        autoAlpha: 1,
+      }
+    );
+
+    super.show(timeline);
+  }
+
+  destroy() {
+    super.destroy();
+
+    this.link.removeEventListeners();
   }
 }
